@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Do Zero ao Mercado · Walker Rocha</title>
+<meta name="description" content="Coleção educacional de e-books sobre mercado financeiro: fundamentos, análise técnica, método e controle emocional, mais uma ferramenta de estudo de gráficos.">
+<meta property="og:title" content="Do Zero ao Mercado · Walker Rocha">
+<meta property="og:description" content="Do primeiro conceito à análise técnica, com método e controle emocional.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#07100d;--card:#0d1a16;--line:#22362f;--ink:#e9f2ee;--muted:#a9bdb5;--dim:#6f857c;--green:#2fd09a;--orange:#f7931a;--gold:#e6b450;--blue:#4f8fe0;--red:#ff5f4e}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:"IBM Plex Sans",system-ui,sans-serif;line-height:1.5;overflow-x:hidden}
+.bg{position:fixed;inset:0;z-index:-1;background:radial-gradient(800px 500px at 85% -5%,rgba(47,208,154,.18),transparent 70%),radial-gradient(600px 500px at 0% 100%,rgba(247,147,26,.10),transparent 70%);}
+.bg:after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:48px 48px;mask-image:linear-gradient(#000,transparent 80%)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 16px}
+.mono{font-family:"IBM Plex Mono",monospace;letter-spacing:.16em;text-transform:uppercase;font-size:12px}
+h1,h2,h3,.disp{font-family:"Bricolage Grotesque",sans-serif;letter-spacing:-.01em}
+.top{display:flex;justify-content:space-between;align-items:center;padding:18px 16px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:600}
+.dot{width:10px;height:10px;border-radius:50%;background:var(--orange);box-shadow:0 0 12px var(--orange)}
+.top a{color:var(--muted);text-decoration:none;font-size:14px}
+.ticker{border-block:1px solid var(--line);overflow:hidden;white-space:nowrap;background:rgba(13,26,22,.6)}
+.ticker div{display:inline-block;padding:8px 0;animation:tk 40s linear infinite}
+.ticker span{margin:0 22px;font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--muted)}
+.ticker b{color:var(--green);font-weight:500}.ticker i{color:var(--red);font-style:normal}
+@keyframes tk{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.ticker div{animation:none}}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center;padding:56px 16px 40px}
+.hero .mono{color:var(--orange)}
+.hero h1{font-size:clamp(40px,7vw,76px);font-weight:800;line-height:.98;margin:14px 0 18px}
+.hero h1 em{font-style:normal;color:var(--green)}
+.hero p{color:var(--muted);font-size:19px;max-width:520px}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:600;font-size:16px;padding:14px 22px;border-radius:12px;text-decoration:none;transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.pri{background:var(--green);color:#04140e;box-shadow:0 10px 30px rgba(47,208,154,.25)}
+.btn.sec{border:1.5px solid var(--line);color:var(--ink);background:rgba(13,26,22,.7)}
+.chart{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:14px;box-shadow:0 30px 60px rgba(0,0,0,.5)}
+.chart .hd{display:flex;justify-content:space-between;font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--muted);margin-bottom:6px}
+.chart .hd b{color:var(--green)}
+.chart svg{display:block;width:100%;height:auto}
+.cv{display:block;border-radius:4px 8px 8px 4px;box-shadow:0 22px 40px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.08);background:#0d1a16;aspect-ratio:1284/1818;object-fit:cover}
+.stack{display:flex;justify-content:center;height:170px;margin:8px 0 34px}
+.stack .cv{width:96px;flex:none;margin:0 -20px}
+.stack .cv:nth-child(1){transform:rotate(-8deg) translateY(8px)}.stack .cv:nth-child(2){transform:rotate(-3deg)}.stack .cv:nth-child(3){transform:rotate(3deg)}.stack .cv:nth-child(4){transform:rotate(8deg) translateY(8px)}
+.stack.one .cv{width:118px;margin:0;transform:none}
+.mini{width:120px;align-self:center;margin-left:-30px;transform:rotate(6deg) translateY(14px);background:#0a1411;border:1px solid var(--line);border-radius:8px;padding:6px;box-shadow:0 20px 30px rgba(0,0,0,.6);z-index:2}
+.mini img,.sim img{display:block;width:100%;border-radius:4px}
+.heroc{display:flex;justify-content:center;margin-top:18px}.heroc .cv{width:22%;margin:0 -2%}
+.heroc .cv:nth-child(1){transform:rotate(-7deg) translateY(10px)}.heroc .cv:nth-child(2){transform:rotate(-2deg)}.heroc .cv:nth-child(3){transform:rotate(2deg)}.heroc .cv:nth-child(4){transform:rotate(7deg) translateY(10px)}
+section{padding:48px 0}
+.sh{text-align:center;margin-bottom:28px}
+.sh .mono{color:var(--green)}
+.sh h2{font-size:clamp(28px,4.5vw,42px);margin-top:8px;line-height:1.1}
+.sh p{color:var(--muted);margin-top:8px}
+.offers{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:stretch}
+.offer{position:relative;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;display:flex;flex-direction:column}
+.offer.star{border:2px solid var(--green);box-shadow:0 0 0 6px rgba(47,208,154,.08),0 30px 60px rgba(0,0,0,.5);transform:translateY(-8px)}
+.badge{position:absolute;top:-13px;left:22px;font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.12em;padding:5px 10px;border-radius:999px;background:var(--green);color:#04140e;font-weight:500}
+.badge.o{background:var(--orange);color:#140a00}.badge.g{background:#24382f;color:var(--ink)}
+.offer h3{font-size:22px;line-height:1.15}
+.offer .sub{color:var(--muted);font-size:14px;margin:6px 0 14px}
+.offer ul{list-style:none;padding:0;display:grid;gap:8px;margin-bottom:18px;font-size:14.5px}
+.offer li{padding-left:24px;position:relative}
+.offer li:before{content:"";position:absolute;left:0;top:5px;width:14px;height:14px;border-radius:4px;background:var(--green);box-shadow:inset 0 0 0 4px var(--card)}
+.price{margin-top:auto;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+.price s{color:var(--dim)}
+.price b{font-family:"Bricolage Grotesque",sans-serif;font-size:38px;font-weight:800}
+.price small{color:var(--muted);font-size:13px;width:100%}
+.offer .btn{width:100%}
+.singles{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.single{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;display:flex;flex-direction:column;text-decoration:none;color:inherit;transition:border-color .15s,transform .15s}
+.single:hover{border-color:var(--green);transform:translateY(-3px)}
+.single .cv{width:62%;margin:0 auto 14px}
+.single .sim{margin:6px 0 14px;border:1px solid var(--line);border-radius:8px;padding:6px;background:#0a1411}
+.single h4{font-family:"Bricolage Grotesque",sans-serif;font-size:17px;line-height:1.2}
+.single p{color:var(--muted);font-size:13.5px;margin:6px 0 12px}
+.single .row{margin-top:auto;display:flex;justify-content:space-between;align-items:center}
+.single .row b{font-family:"Bricolage Grotesque",sans-serif;font-size:22px}
+.single .row span{font-size:14px;color:var(--green);font-weight:600}
+.trail{display:grid;grid-template-columns:repeat(4,1fr);gap:0;counter-reset:t}
+.step{padding:18px;border-top:2px solid var(--line);position:relative}
+.step:before{counter-increment:t;content:counter(t);position:absolute;top:-16px;left:18px;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-family:"Bricolage Grotesque",sans-serif;font-weight:800;background:var(--c);color:#07100d}
+.step h4{font-family:"Bricolage Grotesque",sans-serif;font-size:19px;margin-top:10px}
+.step p{color:var(--muted);font-size:14px;margin-top:4px}
+.faq{max-width:760px;margin:0 auto;display:grid;gap:10px}
+details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 18px}
+summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between}
+summary:after{content:"+";color:var(--green);font-size:20px;line-height:1}
+details[open] summary:after{content:"–"}
+details p{color:var(--muted);margin-top:8px;font-size:15px}
+footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--dim);font-size:13px;text-align:center}
+footer b{color:var(--ink)}
+@media (max-width:900px){
+.hero{grid-template-columns:1fr;padding-top:32px;gap:24px}
+.offers{grid-template-columns:1fr}.offer.star{transform:none;order:-1}
+.singles{grid-template-columns:repeat(2,1fr)}
+.trail{grid-template-columns:1fr 1fr;row-gap:28px}
+}
+@media (max-width:480px){.singles{gap:10px}.single{padding:12px}.hero p{font-size:17px}}
+</style>
+</head>
+<body>
+<div class="bg"></div>
+<div class="wrap top">
+<div class="brand"><span class="dot"></span>Do Zero ao Mercado</div>
+<a href="#ofertas">Ver ofertas →</a>
+</div>
+<div class="ticker" aria-hidden="true"><div>
+<span>CANDLES <b>▲ leitura</b></span><span>STOP <b>técnico</b></span><span>RISCO <b>≤ 2%</b></span><span>IMPULSO <i>▼ controle</i></span><span>MM 21 <b>▲</b></span><span>IFR 14 <b>54,2</b></span><span>MÉTODO <b>antes da emoção</b></span><span>SUPORTE <b>testado</b></span>
+<span>CANDLES <b>▲ leitura</b></span><span>STOP <b>técnico</b></span><span>RISCO <b>≤ 2%</b></span><span>IMPULSO <i>▼ controle</i></span><span>MM 21 <b>▲</b></span><span>IFR 14 <b>54,2</b></span><span>MÉTODO <b>antes da emoção</b></span><span>SUPORTE <b>testado</b></span>
+</div></div>
+<div class="wrap hero">
+<div>
+<div class="mono">Coleção educacional · Walker Rocha</div>
+<h1>Do primeiro conceito à operação <em>com método.</em></h1>
+<p>Quatro e-books e uma ferramenta de estudo para você entender o mercado, ler o gráfico e operar com regras, sem depender de palpite.</p>
+<div class="btns"><a class="btn pri" href="#ofertas">Escolher meu plano</a><a class="btn sec" href="https://pay.kiwify.com.br/F6CmPbN">Começar pelo Livro 1 · R$ 27</a></div>
+</div>
+<div><div class="chart" aria-hidden="true">
+<div class="hd"><span>ESTUDO-01 · gráfico de treino</span><b>MM 9 · MM 21</b></div>
+<svg viewBox="0 0 400 230" id="hc"></svg>
+</div>
+<div class="heroc"><img class="cv" src="img/livro1.jpg" alt="Capa Fundamentos do Mercado"><img class="cv" src="img/livro2.jpg" alt="Capa Lendo o Mercado"><img class="cv" src="img/livro3.jpg" alt="Capa Operando com Método"><img class="cv" src="img/guia.jpg" alt="Capa Guia de Padrões Gráficos"></div></div>
+</div>
+<section id="ofertas">
+<div class="wrap">
+<div class="sh"><div class="mono">Escolha por onde começar</div><h2>Três jeitos de entrar na coleção</h2><p>Pagamento único, acesso imediato pela área de membros.</p></div>
+<div class="offers">
+<div class="offer">
+<span class="badge o">COMECE AQUI</span>
+<div class="stack one"><img class="cv" src="img/livro1.jpg" alt="Capa Fundamentos do Mercado" loading="lazy"></div>
+<h3>Livro 1 · Fundamentos do Mercado</h3>
+<p class="sub">Para quem está começando do zero.</p>
+<ul><li>Como a bolsa funciona, ativos, corretoras e ordens</li><li>Compra, venda e os tipos de operação explicados</li><li>O stop antes de qualquer operação</li><li>51 páginas com gráficos ilustrados</li></ul>
+<div class="price"><b>R$ 27</b><small>Pagamento único</small></div>
+<a class="btn sec" href="https://pay.kiwify.com.br/F6CmPbN">Quero o Livro 1</a>
+</div>
+<div class="offer star">
+<span class="badge">MAIS COMPLETO</span>
+<div class="stack"><img class="cv" src="img/livro1.jpg" alt="Capa Fundamentos do Mercado" loading="lazy"><img class="cv" src="img/livro2.jpg" alt="Capa Lendo o Mercado" loading="lazy"><img class="cv" src="img/livro3.jpg" alt="Capa Operando com Método" loading="lazy">
+<div class="mini"><img src="img/ferramenta.jpg" alt="Tela da ferramenta de estudo" loading="lazy"></div></div>
+<h3>Coleção Completa + Ferramenta de Estudo</h3>
+<p class="sub">Tudo da coleção, mais a ferramenta para praticar.</p>
+<ul><li>Os 4 e-books (190 páginas)</li><li>3 materiais de apoio em planilha e PDF</li><li>Ferramenta de estudo de gráficos no navegador, com indicadores e explicação a cada exercício</li><li>Valores fictícios, sem mensalidade</li></ul>
+<div class="price"><s>R$ 205</s><b>R$ 147</b><small>Pagamento único · economia de R$ 58</small></div>
+<a class="btn pri" href="https://pay.kiwify.com.br/uf64ykh">Quero a coleção completa</a>
+</div>
+<div class="offer">
+<span class="badge g">TRILHA DE LEITURA</span>
+<div class="stack"><img class="cv" src="img/livro1.jpg" alt="Capa Fundamentos do Mercado" loading="lazy"><img class="cv" src="img/livro2.jpg" alt="Capa Lendo o Mercado" loading="lazy"><img class="cv" src="img/livro3.jpg" alt="Capa Operando com Método" loading="lazy"><img class="cv" src="img/guia.jpg" alt="Capa Guia de Padrões Gráficos" loading="lazy"></div>
+<h3>Coleção 4 e-books</h3>
+<p class="sub">A trilha completa de leitura.</p>
+<ul><li>Fundamentos, Lendo o Mercado, Operando com Método e Guia de Padrões Gráficos</li><li>3 materiais de apoio do Livro 3</li><li>Do básico à análise técnica e ao controle emocional</li></ul>
+<div class="price"><s>R$ 148</s><b>R$ 97</b><small>Pagamento único · economia de R$ 51</small></div>
+<a class="btn sec" href="https://pay.kiwify.com.br/37K64yY">Quero os 4 e-books</a>
+</div>
+</div>
+</div>
+</section>
+<section>
+<div class="wrap">
+<div class="sh"><div class="mono">A trilha</div><h2>Cada material é um passo</h2></div>
+<div class="trail">
+<div class="step" style="--c:var(--orange)"><h4>Fundamentos</h4><p>Como o mercado funciona e por que o stop vem antes da operação.</p></div>
+<div class="step" style="--c:var(--green)"><h4>Leitura</h4><p>Candles, tendência, suporte e resistência, volume e indicadores.</p></div>
+<div class="step" style="--c:var(--gold)"><h4>Método</h4><p>Plano, gestão de risco, tamanho de posição e controle emocional.</p></div>
+<div class="step" style="--c:var(--blue)"><h4>Consulta</h4><p>30 padrões gráficos, um por página, para estudar com o gráfico aberto.</p></div>
+</div>
+</div>
+</section>
+<section>
+<div class="wrap">
+<div class="sh"><div class="mono">Avulsos</div><h2>Prefere montar do seu jeito?</h2><p>Cada material também pode ser comprado separado.</p></div>
+<div class="singles">
+<a class="single" href="https://pay.kiwify.com.br/jzHHRBJ"><img class="cv" src="img/livro2.jpg" alt="Capa Lendo o Mercado" loading="lazy"><h4>Lendo o Mercado</h4><p>Análise técnica para iniciantes, com checklist de leitura.</p><div class="row"><b>R$ 37</b><span>Comprar →</span></div></a>
+<a class="single" href="https://pay.kiwify.com.br/u3AikQ0"><img class="cv" src="img/livro3.jpg" alt="Capa Operando com Método" loading="lazy"><h4>Operando com Método</h4><p>Risco, disciplina e controle emocional. Com 3 materiais de apoio.</p><div class="row"><b>R$ 47</b><span>Comprar →</span></div></a>
+<a class="single" href="https://pay.kiwify.com.br/PVDtco7"><img class="cv" src="img/guia.jpg" alt="Capa Guia de Padrões Gráficos" loading="lazy"><h4>Guia de Padrões Gráficos</h4><p>30 padrões explicados, um por página, para consulta.</p><div class="row"><b>R$ 37</b><span>Comprar →</span></div></a>
+<a class="single" href="https://pay.kiwify.com.br/rFzPHBo"><div class="sim"><img src="img/ferramenta.jpg" alt="Tela da ferramenta de estudo" loading="lazy"></div><h4>Ferramenta de Estudo</h4><p>Pratique a leitura de gráfico com indicadores, no navegador.</p><div class="row"><b>R$ 57</b><span>Comprar →</span></div></a>
+</div>
+</div>
+</section>
+<section>
+<div class="wrap">
+<div class="sh"><div class="mono">Dúvidas</div><h2>Perguntas frequentes</h2></div>
+<div class="faq">
+<details><summary>Como recebo o material?</summary><p>Logo após o pagamento aprovado, você recebe um e-mail da Kiwify com o acesso à área de membros, onde baixa os e-books e os materiais de apoio.</p></details>
+<details><summary>Preciso ter experiência?</summary><p>Não. O Livro 1 começa do zero. Se você já conhece o básico, pode começar pela coleção ou pelos livros avulsos.</p></details>
+<details><summary>É assinatura?</summary><p>Não. Todos os produtos têm pagamento único, sem mensalidade.</p></details>
+<details><summary>Como funciona a ferramenta de estudo?</summary><p>É um arquivo que abre no navegador do computador, sem instalar nada. Mostra gráficos de candles com indicadores e usa valores fictícios para você praticar o que os livros ensinam.</p></details>
+<details><summary>Quais as formas de pagamento?</summary><p>Cartão de crédito, Pix e boleto, pelo checkout seguro da Kiwify.</p></details>
+<details><summary>E se eu não gostar?</summary><p>Você tem 7 dias para pedir o reembolso, direto pela Kiwify.</p></details>
+</div>
+</div>
+</section>
+<footer>
+<div class="wrap"><b>Do Zero ao Mercado</b> · Walker Rocha<br>Conteúdo educacional. Não é recomendação de investimento. Operar no mercado envolve riscos.</div>
+</footer>
+<script>
+(function(){
+function rnd(s){return function(){s=(s*9301+49297)%233280;return s/233280}}
+function candles(id,w,h,n,seed,trend,ma){
+var el=document.getElementById(id);if(!el)return;var r=rnd(seed),p=50,c=[];
+for(var i=0;i<n;i++){var o=p,cl=o+(r()-.5+trend)*6,hi=Math.max(o,cl)+r()*3,lo=Math.min(o,cl)-r()*3;c.push([o,hi,lo,cl]);p=cl}
+var mx=Math.max.apply(0,c.map(function(x){return x[1]})),mn=Math.min.apply(0,c.map(function(x){return x[2]}));
+var y=function(v){return 6+(mx-v)/(mx-mn)*(h-12)},cw=w/n,s='';
+for(i=0;i<n;i++){var x=c[i],up=x[3]>=x[0],col=up?'#2fd09a':'#ff5f4e',cx=i*cw+cw/2;
+s+='<line x1="'+cx+'" x2="'+cx+'" y1="'+y(x[1])+'" y2="'+y(x[2])+'" stroke="'+col+'" stroke-width="'+Math.max(.6,cw*.12)+'"/>';
+s+='<rect x="'+(i*cw+cw*.2)+'" width="'+cw*.6+'" y="'+Math.min(y(x[0]),y(x[3]))+'" height="'+Math.max(.8,Math.abs(y(x[0])-y(x[3])))+'" fill="'+col+'" rx="'+cw*.08+'"/>'}
+if(ma){[[9,'#4f8fe0'],[21,'#f7931a']].forEach(function(m){var pts=[];for(var i=m[0]-1;i<n;i++){var a=0;for(var k=0;k<m[0];k++)a+=c[i-k][3];pts.push((i*cw+cw/2)+','+y(a/m[0]))}s+='<polyline fill="none" stroke="'+m[1]+'" stroke-width="'+(w>200?1.6:.8)+'" points="'+pts.join(' ')+'"/>'})}
+el.innerHTML=s}
+candles('hc',400,230,60,7,.12,true);
+})();
+</script>
+</body>
+</html>
